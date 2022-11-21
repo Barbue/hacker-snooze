@@ -13,12 +13,6 @@ parent.appendChild(child);
 body.appendChild(parent);
 
 
- 
-
-
-
-
-
 let hackerNewsAPIrequest = async () => {
     let response = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
     let data = await response.json();
@@ -43,53 +37,80 @@ let hackerNewsAPIrequest = async () => {
         linkAnchor.setAttribute('target','_blank');
         li.appendChild(linkAnchor);
         li.append(` Score: ${data.score} | Comments: ${data.descendants} | By: ${data.by} `);
-
-
+        linkAnchor.style.color = 'green'
         
-     
-      
 
-        
+        console.log(data.kids)
+
        
 
-
         
-        
-        
-        
-       
+        fetch(`https://hacker-news.firebaseio.com/v0/${data.kids[i]}.json?print=pretty`).then(function(response){
+            return response.json()
+        })
+         .then(function(data){
+         
+         console.log(data)
+         
+         
+         
+         
+     })
+
+              
+            
 
 
-        
-        
-        
 
-     
+         
 
 
 
 
-        
-
-
-      
-        
 
 
 })
 
+
+
+
+    
+
 }
 
-
-
-        
-
-        
-    
-
-    
 }
 hackerNewsAPIrequest();
+
+
+
+    
+    
+    
+    
+    
+    //  })
+
+//    fetch('https://hacker-news.firebaseio.com/v0/item/2921983.json?print=pretty').then(function(response){
+//     return response.json();
+//    }).then(function(data){
+//     console.log(data)
+
+   
+
+//    })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

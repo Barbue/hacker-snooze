@@ -5,16 +5,27 @@ h1 {
     font-style: italic;
     
     
+    
 
 }
 
-li {
-    color: black;
+body{
+    background-color: #a5a58d;
+
 }
 
 
 
 .parent {
-    background-color: #e9ecef;
+    background-color: #a5a58d;
+
+    
 
 }
+
+@media (max-width: 1250px) {
+    body {
+    background-color: #f1faee;
+}
+}
+
